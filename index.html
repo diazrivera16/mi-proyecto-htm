@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Propuesta de Matrimonio!</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ffefd5;
+            text-align: center;
+        }
+        #mensaje {
+            margin-top: 50px;
+            font-size: 36px;
+            color: #8b0000;
+            text-shadow: 2px 2px 4px #000000;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        #boton_si, #boton_no {
+            padding: 15px 30px;
+            margin: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 25px;
+            border: 3px solid #ff69b4;
+            background-color: #ffb6c1;
+            color: #8b0000;
+            box-shadow: 0px 0px 10px #888888;
+            position: absolute;
+        }
+        #boton_si:hover, #boton_no:hover {
+            background-color: #ff69b4;
+            color: #ffffff;
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
+        #corazon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #ff69b4;
+            animation: beat 1s infinite alternate;
+        }
+        @keyframes beat {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+        #anillo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            animation: rotateRing 6s linear infinite;
+        }
+        @keyframes rotateRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        #mariposa {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            animation: flyButterfly 8s linear infinite;
+        }
+        @keyframes flyButterfly {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-20px); }
+        }
+        .video-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            margin: 10px;
+            z-index: -1; /* Asegúrate de que el video esté detrás de los botones */
+        }
+    </style>
+</head>
+<body>
+    <div id="mensaje">¡Quiero pasar el resto de mi vida contigo!<br>¿Quieres casarte conmigo?</div>
+    <button id="boton_si" style="left: 35%;" onclick="redireccionar()">¡Sí!</button>
+    <button id="boton_no" style="left: 50%;">No, ¡nunca! 🙈</button>
+    <span id="corazon">❤️</span>
+    <img id="anillo" src="https://img.edenly.com/pt/30/origen-n125-anillos-compromiso-oro-rosa-18-quilates__9020500_1.webp" alt="Anillo de compromiso">
+    <img id="mariposa" src="https://www.publicdomainpictures.net/pictures/520000/nahled/butterfly-pink-silhouette-clipart.png" alt="Mariposa">
+    <div class="video-container">
+        <video width="320" height="180" controls>
+            <source src="WhatsApp Video 2024-06-02 at 10.12.31 PM.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+    </div>
+    <script>
+        document.getElementById("boton_no").addEventListener("mouseover", function() {
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+            var newLeft = Math.random() * (screenWidth - 200); // 200 es el ancho del botón
+            var newTop = Math.random() * (screenHeight - 100); // 100 es el alto del botón
+            document.getElementById("boton_no").style.left = newLeft + "px";
+            document.getElementById("boton_no").style.top = newTop + "px";
+        });
+ 
+        function redireccionar() {
+            // Aquí puedes poner la URL de la página a la que deseas redirigir
+            window.location.href = "si.html";
+        }
+    </script>
+</body>
+</html>
